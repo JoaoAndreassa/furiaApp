@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "opponent": "Natus Vincere",
+      "date": "2025-05-12T18:00:00Z",
+      "event": "IEM Dallas 2025"
+    },
+    {
+      "id": 2,
+      "opponent": "FaZe Clan",
+      "date": "2025-05-15T21:00:00Z",
+      "event": "Blast Premier Spring"
+    },
+    {
+      "id": 3,
+      "opponent": "G2 Esports",
+      "date": "2025-05-20T16:00:00Z",
+      "event": "ESL Pro League"
+    }
+  ]
+  
