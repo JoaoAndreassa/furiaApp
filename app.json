@@ -4,9 +4,14 @@
     "slug": "furia-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "platforms": ["ios", "android"],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+
+    "extra": {
+    "PANDASCORE_TOKEN": "Bearer xXVUhkKwYlLCSnlGUyHfNNAGH4hULSWjCk4ygiuEmcV3hrwIpZg"
+  },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -23,6 +28,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
