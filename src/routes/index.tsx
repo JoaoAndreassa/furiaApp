@@ -9,7 +9,8 @@ import { GameMenuScreen } from "../screens/GameMenuScreen";
 import { NextMatchesScreen } from "../screens/NextMatchesScreen";
 import { StatisticsScreen } from "../screens/StatisticsScreen";
 import { TeamScreen } from "../screens/TeamScreen";
-
+import { EditProfileScreen } from "../screens/EditProfileScreen";
+import { DrawerNavigator } from "../screens/DrawerNavigator";
 const Stack = createNativeStackNavigator();
 
 export const AppRoutes = () => {
@@ -23,13 +24,13 @@ export const AppRoutes = () => {
 			>
 				<Stack.Screen name="Login" component={LoginScreen} />
 				<Stack.Screen name="Register" component={RegisterScreen} />
-				<Stack.Screen name="Home" component={HomeScreen} />
+				<Stack.Screen name="Main" component={DrawerNavigator} />
 				<Stack.Screen name="GameMenu" component={GameMenuScreen} />
 				<Stack.Screen name="NextMatches" component={NextMatchesScreen} />
 				<Stack.Screen name="Statistics" component={StatisticsScreen} />
 				<Stack.Screen name="Team" component={TeamScreen} />
-
-
+				<Stack.Screen name="EditProfile" component={EditProfileScreen} />
+				
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

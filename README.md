@@ -1,4 +1,4 @@
-# 🦁 FURIA Fan App
+<!-- README.md -->
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Mobile-lightgrey?style=for-the-badge" />
@@ -9,70 +9,124 @@
   <img src="https://img.shields.io/badge/Fan%20App-FURIA-black?style=for-the-badge" />
 </p>
 
+# 🦁 FURIA Fan App
+
+<details>
+<summary>🇧🇷 Versão em Português</summary>
+
 Aplicativo mobile feito para os fãs da FURIA Esports!  
 Visualize próximos jogos, elenco, estatísticas e conecte-se com o time de forma interativa.
 
----
-
 ## 📸 Demonstração
 
-![alt text](assets/loginPage.jpeg)
-![alt text](assets/HomePage.jpeg)
-![alt text](assets/gamePage.jpeg)
-![alt text](assets/nextMatchesPage.jpeg)
-![alt text](assets/statisticsPage.jpeg)
-![alt text](assets/teamPage.jpeg)
-![alt text](assets/playerPage.jpeg)
-
----
+![Register](assets/registerPage.jpeg)
+![Login](assets/loginPage.jpeg)
+![Home](assets/HomePage.jpeg)
+![Menu lateral](assets/drawerNav.jpeg)
+![Editar Perfil](assets/editProfile.jpeg)
+![Jogo](assets/gameMenu.jpeg)
+![Próximos Jogos](assets/nextMatches.jpeg)
+![Estatísticas](assets/teamStatistics.jpeg.jpeg)
+![Time](assets/teamPage.jpeg)
+![Jogador](assets/playerStats.jpeg)
 
 ## ✨ Funcionalidades
 
-- Visualizar próximos jogos da FURIA no CS:GO
+- Visualizar próximos jogos da FURIA no CS
 - Ver estatísticas detalhadas do time
 - Conhecer o elenco atual da FURIA
-- Acesso rápido aos perfis de Twitch e Instagram dos jogadores
-- Animações suaves de interação e toques com feedback tátil
-- Interface responsiva e adaptada para experiência mobile
-
----
+- Acesso aos perfis sociais dos jogadores
+- Menu lateral com avatar e nome do usuário
+- Edição de perfil com seleção de avatar
+- Interface responsiva e animada
 
 ## 🚀 Tecnologias utilizadas
 
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Expo Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/)
-- [React Native Animated API](https://reactnative.dev/docs/animated)
-
----
-
-## 🔥 Possibilidades de crescimento futuro
-
-- 🔥 Implementar chat em tempo real entre fãs
-- 🔥 Integração com APIs de partidas (PandaScore, HLTV, etc)
-- 🔥 Notificações push para próximos jogos
-- 🔥 Tela de destaques (melhores momentos e clips)
-- 🔥 Sistema de login social (Google, Apple, etc)
-- 🔥 Rankings e estatísticas individuais dos jogadores
-- 🔥 Gamificação: badges para fãs mais ativos
-- 🔥 Modo escuro/dark mode personalizado
-- 🔥 Personalização de time favorito (FURIA CS, LoL, Rocket League)
-- 🔥 Versão web com PWA (Progressive Web App)
-
----
+- React Native
+- Expo
+- TypeScript
+- React Navigation
+- Expo Image Picker
+- Expo Haptics
+- AsyncStorage
+- React Native Animated API
 
 ## 🛠 Como rodar o projeto
 
-1. Clone o repositório:
 ```bash
 git clone https://github.com/JoaoAndreassa/furiaApp.git
-
-2. Instale as dependências:
+cd furiaApp
 npm install
-
-2. Rode o projeto:
 npm start
 
-Depois, escaneie o QR Code com o aplicativo Expo Go no seu dispositivo móvel!
+Depois, escaneie o QR Code com o Expo Go no seu celular!
 ```
+## 🔮 Futuras melhorias
+
+- Comunidade com posts e comentários
+- Histórico de partidas
+- Integração com APIs externas
+- Suporte a mais jogos (LoL, Rocket League, Kings League, etc..)
+- Notificações push
+- Login com redes sociais
+- Modo escuro
+- Gamificação (medalhas, badges)
+
+</details>
+
+<details> <summary>🇺🇸 English Version</summary>
+
+Mobile app made for FURIA Esports fans!
+Check upcoming matches, explore team stats, meet the players, and connect with the team in an interactive way.
+
+## 📸 Preview
+![Register](assets/registerPage.jpeg)
+![Login](assets/loginPage.jpeg)
+![Home](assets/HomePage.jpeg)
+![Side menu](assets/drawerNav.jpeg)
+![Edit profile](assets/editProfile.jpeg)
+![Game](assets/gameMenu.jpeg)
+![Next matches](assets/nextMatches.jpeg)
+![Statistics](assets/teamStatistics.jpeg.jpeg)
+![Team](assets/teamPage.jpeg)
+![Player](assets/playerStats.jpeg)
+
+## ✨ Features
+- View upcoming FURIA CS matches
+- Check detailed team statistics
+- Explore current team roster
+- Quick access to players' social media
+- Sidebar menu with avatar and user name
+- Edit profile with avatar picker
+- Responsive and animated interface
+
+## 🚀 Technologies Used
+- React Native
+- Expo
+- TypeScript
+- React Navigation
+- Expo Image Picker
+- Expo Haptics
+- AsyncStorage
+- React Native Animated API
+
+## 🛠 How to run the project
+```bash
+git clone https://github.com/JoaoAndreassa/furiaApp.git
+cd furiaApp
+npm install
+npm start
+Then scan the QR Code with the Expo Go app on your phone!
+```
+
+## 🔮 Future Improvements
+- Community feature with posts and comments
+- Match history
+- Integration with external match APIs
+- Support for more games (LoL, Rocket League, Kings League, etc.)
+- Push notifications
+- Social login (Google, Apple, etc.)
+- Dark mode
+- Fan gamification (badges, ranks)
+
+</details>
