@@ -6,11 +6,15 @@ import {
 	TouchableOpacity,
 	StyleSheet,
 	Alert,
-	Image
+	Image,
+	KeyboardAvoidingView,
+	Platform,
 } from "react-native";
 import { colors, fontSizes } from "../styles/theme";
 import { useAuth } from "../contexts/AuthContext";
 import { ActivityIndicator } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 export const LoginScreen = ({ navigation }: any) => {
 	const [email, setEmail] = useState("");
@@ -18,62 +22,78 @@ export const LoginScreen = ({ navigation }: any) => {
 	const { login } = useAuth();
 	const [loading, setLoading] = useState(false);
 
-	const handleLogin = () => {
+	const handleLogin = async () => {
 		setLoading(true);
-		setTimeout(() => {
-			const success = login(email, password);
-			setLoading(false);
 
-			if (success) {
-				navigation.navigate("Home"); // 👈 aqui estava "Dashboard"
-			} else {
-				Alert.alert("Erro", "Email ou senha inválidos.");
-			}
-		}, 1000);
+		const success = await login(email, password); // 👈 await direto aqui
+
+		setLoading(false);
+
+		if (success) {
+			navigation.navigate("Main"); // Vai para Home se sucesso
+		} else {
+			Alert.alert("Erro", "Email ou senha inválidos.");
+		}
 	};
+
 	return (
-		<View style={styles.container}>
-			<Image
-				source={require("../assets/furia-logo2.png")} // substitui por seu logo
-				style={styles.logo}
-				resizeMode="contain"
-			/>
-			<Text style={styles.title}>FURIA</Text>
+		<SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
+			<StatusBar style="light" translucent backgroundColor="transparent" />
 
-			<TextInput
-				placeholder="Email"
-				placeholderTextColor={colors.gray2}
-				style={styles.input}
-				keyboardType="email-address"
-				value={email}
-				onChangeText={setEmail}
-			/>
-
-			<TextInput
-				placeholder="Senha"
-				placeholderTextColor={colors.gray2}
-				style={styles.input}
-				secureTextEntry
-				value={password}
-				onChangeText={setPassword}
-			/>
-
-			<TouchableOpacity
-				style={[styles.button, loading && { opacity: 0.6 }]}
-				onPress={handleLogin}
-				disabled={loading}
+			<KeyboardAvoidingView
+				style={{ flex: 1 }}
+				behavior={Platform.OS === "ios" ? "padding" : undefined}
 			>
-				{loading ? (
-					<ActivityIndicator color={colors.black} />
-				) : (
-					<Text style={styles.buttonText}>Entrar</Text>
-				)}
-			</TouchableOpacity>
+				<View style={styles.container}>
+					<Image
+						source={require("../assets/furia-logo2.png")} // substitui por seu logo
+						style={styles.logo}
+						resizeMode="contain"
+					/>
+					<Text style={styles.title}>FURIA</Text>
 
-			<TouchableOpacity onPress={() => navigation.navigate("Register")}>
-				<Text style={styles.linkText}>Não tem uma conta? Cadastre-se</Text>
-			</TouchableOpacity>
-		</View>
+					<TextInput
+						placeholder="Email"
+						placeholderTextColor={colors.gray2}
+						style={[styles.input, styles.inputSpacing]}
+						keyboardType="email-address"
+						autoCapitalize="none"
+						autoCorrect={false}
+						textAlign="left"
+						textAlignVertical="center"
+						value={email}
+						onChangeText={setEmail}
+					/>
+
+					<TextInput
+						placeholder="Senha"
+						placeholderTextColor={colors.gray2}
+						style={[styles.input, styles.inputSpacing]}
+						secureTextEntry
+						textAlign="left"
+						textAlignVertical="center"
+						value={password}
+						onChangeText={setPassword}
+					/>
+
+					<TouchableOpacity
+						style={[styles.button, loading && { opacity: 0.6 }]}
+						onPress={handleLogin}
+						disabled={loading}
+					>
+						{loading ? (
+							<ActivityIndicator color={colors.black} />
+						) : (
+							<Text style={styles.buttonText}>Entrar</Text>
+						)}
+					</TouchableOpacity>
+
+					<TouchableOpacity onPress={() => navigation.navigate("Register")}>
+						<Text style={styles.linkText}>Não tem uma conta? Cadastre-se</Text>
+					</TouchableOpacity>
+				</View>
+			</KeyboardAvoidingView>
+		</SafeAreaView>
 	);
 };
 
@@ -98,14 +118,18 @@ const styles = StyleSheet.create({
 	},
 	input: {
 		width: "100%",
-		backgroundColor: "#1a1a1a",
+		backgroundColor: "#5b5a2f",
 		borderRadius: 8,
-		padding: 16,
-		fontSize: fontSizes.p,
-		color: colors.white,
-		marginBottom: 16,
+		paddingHorizontal: 16,
+		paddingVertical: 12,
+		fontSize: 16,
+		color: "#fff",
 		fontFamily: "Nunito_400Regular",
 	},
+	inputSpacing: {
+		marginBottom: 16,
+	},
+
 	button: {
 		backgroundColor: colors.gold3,
 		paddingVertical: 16,
